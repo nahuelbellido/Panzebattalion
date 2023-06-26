@@ -12,7 +12,7 @@ public class TankStats : MonoBehaviour
     public Image healthBar;
     public Image armorBar;
 
-    public GameObject gameOverPrefab; 
+    public GameObject gameOverPrefab;
 
     private void Start()
     {
@@ -27,50 +27,36 @@ public class TankStats : MonoBehaviour
     {
         if (currentArmor > 0f)
         {
-            
             currentArmor -= damage;
             currentArmor = Mathf.Clamp(currentArmor, 0f, maxArmor);
         }
         else
         {
-           
             currentHealth -= damage;
             currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
 
             if (currentHealth <= 0f)
             {
-                
                 Instantiate(gameOverPrefab);
-                Destroy(gameObject); 
+                Destroy(gameObject);
             }
         }
 
-       
         UpdateHealthUI();
         UpdateArmorUI();
     }
 
     private void UpdateHealthUI()
     {
-        
         float healthPercentage = currentHealth / maxHealth;
-
-        
         healthPercentage = Mathf.Clamp01(healthPercentage);
-
-        
         healthBar.fillAmount = healthPercentage;
     }
 
     private void UpdateArmorUI()
     {
-        
         float armorPercentage = currentArmor / maxArmor;
-
-       
         armorPercentage = Mathf.Clamp01(armorPercentage);
-
-       
         armorBar.fillAmount = armorPercentage;
     }
 }

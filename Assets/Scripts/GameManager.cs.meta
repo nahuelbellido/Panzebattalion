@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 89e8746d8e7bd554c8d18f92a2c94595
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - enemyTankPrefab: {fileID: 1539473232930482804, guid: d19444c8a0a1ac141a2feccd602d8416,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
